@@ -9,7 +9,7 @@ if (username) {
       "build",
       {
         message: "Deploying app...",
-        repo: `https://${username}:${token}@github.com/OrangeDrangon/spotify-player.git`,
+        repo: `https://${username}:${token}@github.com/OrangeDrangon/coronavirus-leaderboard.git`,
         silent: true
       },
       err => {
