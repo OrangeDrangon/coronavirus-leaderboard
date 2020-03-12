@@ -32,13 +32,13 @@ steps:
 #   condition: "succeeded()"
 
 - script: |
-    git config --global user.email $(GitHub.Email)
-    git config --global user.name $(GitHub.Name)
+    git config --global user.email $(Email)
+    git config --global user.name $(Name)
   displayName: "Config git credentials"
   condition: "and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))"
 
 
 - script: |
-    node deploy.js $(Github.UserName) $(GitHub.AccessToken)
+    node deploy.js $(UserName) $(AccessToken)
   displayName: 'Deploy App to GitHub Pages'
   condition: "and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))"
